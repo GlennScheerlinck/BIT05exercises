@@ -1,0 +1,8 @@
+-mkdir BIT05exercises
+-cd BIT05exercises
+-git init
+-(git status)
+-ga naar github en klik op + ; klik op new repository - copy address
+in terminal: git remote add origin https://github.com/GlennScheerlinck/BIT05exercises.git
+make a file in the dir
+$git push origin master
