@@ -1,0 +1,38 @@
+dia 6 
+UNF (all on 1 line)	
+	dentist(staffNo, dentistName, patientNo, patientName, appointment, surgeryNo)
+
+1NF (eliminate repeating, separate table for related data, id PK)	
+	dentist(staffNo(PK), dentistName, patientNo, patientName, surgeryNo, appointmentDate(PK), appointmentTime(PK))
+
+2NF (non prime attribute of the table is dependant on whole key)	
+	appointment(staffNo(PK), patientNo, patientname, appointmentDate(PK), appointmentTime(PK))
+	surgery(staffNo(PK), apptDate(PK), surgeryNo)
+	dentist(staffNo(PK), dentistName)
+
+3NF (non prime attribute is dependant on every key)	
+	patient(patientNo(PK), patientName)
+	appointment(staffNo(PK), apptdate(PK), apptime(PK), patientno)
+	surgery(staffNo(PK), apptDate(PK), surgeryNo)
+	dentist(staffNo(PK), dentistName)
+
+
+BCNF (any attribute is fully functionally dependent)
+	3NF
+
+
+dia 7
+UNF	form(PatientNo, Name, BedNr, wardnr, wardname, drugno, drugname, drugdescr, drugdosage, method, units, start, finish)
+
+1NF	form(PatientNo(PK), Name, BedNr, wardnr, wardname, drugno(PK), drugname, drugdescr, drugdosage, method, units, start(PK), finish)
+
+2NF	DB(patientNo(PK, drugNo(PK, start(PK), units, finish)
+	patient(patientNo(PK), name, bednr, wardnr)
+	drugs(drugno(PK), drugname, drugdescr, drugdosage, method)
+
+3NF	DB(patientNo(PK), drugNo(PK, start(PK), units, finish)
+	patient(patientNo(PK), name, bednr, wardnr)
+	ward(wardno(PK), wardname)
+	drugs(drugno(PK), drugname, drugdescr, drugdosage, method)
+
+BCNF	3NF
